@@ -1,26 +1,19 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { Box, Heading, Text, Label, TextInput } from '@primer/react';
 import { SearchIcon, RepoIcon, BookIcon, VideoIcon } from '@primer/octicons-react';
 import { projects } from '../data';
+import MediaDisplay from '../components/MediaDisplay';
+import { useFilteredData } from '../hooks/useFilteredData';
 
 const Projects: React.FC = () => {
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    projects.forEach(p => p.tags.forEach(t => tags.add(t)));
-    return Array.from(tags).sort();
-  }, []);
-
-  const filteredProjects = useMemo(() => {
-    return projects.filter(p => {
-      const matchesTag = selectedTag ? p.tags.includes(selectedTag) : true;
-      const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                            p.description.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesTag && matchesSearch;
-    }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  }, [selectedTag, searchQuery]);
+  const { 
+    selectedTag, 
+    setSelectedTag, 
+    searchQuery, 
+    setSearchQuery, 
+    allTags, 
+    filteredData: filteredProjects 
+  } = useFilteredData(projects);
 
   return (
     <Box display="flex" flexDirection={['column', 'column', 'row']} sx={{ gap: 4 }}>
@@ -81,6 +74,9 @@ const Projects: React.FC = () => {
               <Text as="p" mt={2} color="fg.default">
                 {project.description}
               </Text>
+              
+              <MediaDisplay {...project} />
+
               <Box mt={2} display="flex" sx={{ gap: 1 }}>
                 {project.tags.map(tag => (
                   <Label key={tag} variant="secondary">{tag}</Label>
@@ -89,7 +85,7 @@ const Projects: React.FC = () => {
             </Box>
           ))}
           {filteredProjects.length === 0 && (
-            <Text color="fg.muted" textAlign="center" mt={4}>No projects found.</Text>
+            <Text color="fg.muted" textAlign="center" mt={4}>No projects found matching your criteria.</Text>
           )}
         </Box>
       </Box>

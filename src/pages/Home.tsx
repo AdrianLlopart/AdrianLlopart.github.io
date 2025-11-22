@@ -1,47 +1,84 @@
-import React from 'react';
-import { Box, Heading, Text, Avatar, Link } from '@primer/react';
-import { bio } from '../data';
+import React, { useMemo } from 'react';
+import { Box, Heading, Text, Link, Tooltip } from '@primer/react';
+import { MarkGithubIcon, MailIcon } from '@primer/octicons-react';
+import { Linkedin } from 'lucide-react';
+import { bio, work, education } from '../data';
+import Timeline from '../components/Timeline';
 
 const Home: React.FC = () => {
+  const timelineItems = useMemo(() => {
+    const combined = [...work, ...education];
+    return combined.sort((a, b) => {
+      const dateA = new Date(a.startDate).getTime();
+      const dateB = new Date(b.startDate).getTime();
+      return dateB - dateA;
+    });
+  }, []);
+
   return (
-    <Box display="flex" flexDirection={['column', 'column', 'row']} sx={{ gap: 4 }} alignItems="flex-start">
-      <Box flexShrink={0}>
-        <Avatar src="https://github.com/AdrianLlopart.png" size={260} alt="@AdrianLlopart" />
-        <Box mt={3}>
-          <Heading as="h1" sx={{ fontSize: 4 }}>Adrian Llopart</Heading>
-          <Text color="fg.muted" fontSize={2}>@AdrianLlopart</Text>
+    <Box display="flex" flexDirection="column" sx={{ gap: 6 }}>
+      {/* Bio Section */}
+      <Box display="flex" flexDirection={['column', 'column', 'row']} sx={{ gap: 4 }} alignItems="flex-start">
+        <Box flexShrink={0}>
+          <Box
+            sx={{
+              width: 256,
+              height: 256,
+              borderRadius: '50%',
+              overflow: 'hidden'
+            }}
+          >
+            <video
+              src="/videos/profile_pic_moving.mp4"
+              width="100%"
+              height="100%"
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ objectFit: 'cover' }}
+            />
+          </Box>
+          <Box mt={3}>
+            <Heading as="h1" sx={{ fontSize: 4 }}>Adrian Llopart</Heading>
+          </Box>
+          <Box mt={3} display="flex" sx={{ gap: 3 }} alignItems="center">
+            <Tooltip aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/in/adrianllopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                <Linkedin size={24} />
+              </Link>
+            </Tooltip>
+            <Tooltip aria-label="Hugging Face">
+              <Link href="https://huggingface.co/AdrianLlopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="24" height="24" />
+              </Link>
+            </Tooltip>
+            <Tooltip aria-label="GitHub">
+              <Link href="https://github.com/AdrianLlopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                <MarkGithubIcon size={24} />
+              </Link>
+            </Tooltip>
+            <Tooltip aria-label="Email">
+              <Link href="mailto:your.email@example.com" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                <MailIcon size={24} />
+              </Link>
+            </Tooltip>
+          </Box>
         </Box>
-        <Box mt={3}>
-          <Link href="https://github.com/AdrianLlopart" target="_blank" sx={{ display: 'block', mb: 1 }}>GitHub</Link>
-          <Link href="mailto:your.email@example.com" sx={{ display: 'block' }}>Contact</Link>
+
+        <Box flexGrow={1}>
+          <Box p={3} border="1px solid" borderColor="border.default" borderRadius={2} bg="canvas.subtle">
+            <Text as="p" fontSize={2} lineHeight={1.5}>
+              {bio}
+            </Text>
+          </Box>
         </Box>
       </Box>
 
-      <Box flexGrow={1}>
-        <Box p={3} border="1px solid" borderColor="border.default" borderRadius={2} bg="canvas.subtle">
-          <Text as="p" fontSize={2} lineHeight={1.5}>
-            {bio}
-          </Text>
-        </Box>
-        
-        <Box mt={4}>
-          <Heading as="h2" sx={{ fontSize: 3, mb: 2 }}>Pinned</Heading>
-          <Box display="grid" gridTemplateColumns={['1fr', '1fr 1fr']} sx={{ gap: 3 }}>
-             {/* We could pin some projects here later */}
-             <Box p={3} border="1px solid" borderColor="border.default" borderRadius={2}>
-                <Text fontWeight="bold">Deep Researcher Agent</Text>
-                <Text as="p" fontSize={1} color="fg.muted" mt={1}>
-                  An autonomous agent capable of conducting deep research...
-                </Text>
-             </Box>
-             <Box p={3} border="1px solid" borderColor="border.default" borderRadius={2}>
-                <Text fontWeight="bold">Voice to Text Pipeline</Text>
-                <Text as="p" fontSize={1} color="fg.muted" mt={1}>
-                  Robust pipeline for converting voice to text...
-                </Text>
-             </Box>
-          </Box>
-        </Box>
+      {/* Experience & Education Section */}
+      <Box>
+        <Heading as="h2" sx={{ fontSize: 4, mb: 4, textAlign: 'center' }}>Experience & Education</Heading>
+        <Timeline items={timelineItems} />
       </Box>
     </Box>
   );

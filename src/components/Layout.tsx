@@ -28,6 +28,15 @@ const Layout: React.FC<LayoutProps> = ({ colorMode, onToggleTheme }) => {
             <Link to="/projects" style={{ color: 'inherit', textDecoration: 'none' }}>
               <Text fontWeight={location.pathname === '/projects' ? 'bold' : 'normal'}>Projects</Text>
             </Link>
+            <Link to="/research" style={{ color: 'inherit', textDecoration: 'none' }}>
+              <Text fontWeight={location.pathname === '/research' ? 'bold' : 'normal'}>Research</Text>
+            </Link>
+            <Link to="/work" style={{ color: 'inherit', textDecoration: 'none' }}>
+              <Text fontWeight={location.pathname === '/work' ? 'bold' : 'normal'}>Work</Text>
+            </Link>
+            <Link to="/education" style={{ color: 'inherit', textDecoration: 'none' }}>
+              <Text fontWeight={location.pathname === '/education' ? 'bold' : 'normal'}>Education</Text>
+            </Link>
           </Box>
         </Header.Item>
         <Header.Item>
