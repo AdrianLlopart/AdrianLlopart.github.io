@@ -16,9 +16,9 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <Box display="flex" flexDirection="column" sx={{ gap: 6 }}>
+    <Box display="flex" flexDirection="column">
       {/* Bio Section */}
-      <Box display="flex" flexDirection={['column', 'column', 'row']} sx={{ gap: 4 }} alignItems="flex-start">
+      <Box display="flex" flexDirection={['column', 'column', 'row']} alignItems="flex-start">
         <Box flexShrink={0}>
           <Box
             sx={{
@@ -39,35 +39,30 @@ const Home: React.FC = () => {
               style={{ objectFit: 'cover' }}
             />
           </Box>
-          <Box mt={3}>
-            <Heading as="h1" sx={{ fontSize: 4 }}>Adrian Llopart</Heading>
-          </Box>
-          <Box mt={3} display="flex" sx={{ gap: 3 }} alignItems="center">
-            <Tooltip aria-label="GitHub">
-              <Link href="https://github.com/AdrianLlopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
-                <MarkGithubIcon size={24} />
-              </Link>
-            </Tooltip>
-            <Tooltip aria-label="YouTube">
-              <Link href="https://www.youtube.com/channel/UCXXXXXX" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
-                <YoutubeIcon size={30} />
-              </Link>
-            </Tooltip>
-            <Tooltip aria-label="LinkedIn">
-              <Link href="https://www.linkedin.com/in/adrianllopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
-                <Linkedin size={24} />
-              </Link>
-            </Tooltip>
-            <Tooltip aria-label="Hugging Face">
-              <Link href="https://huggingface.co/AdrianLlopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
-                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="24" height="24" />
-              </Link>
-            </Tooltip>
-            <Tooltip aria-label="Email">
-              <Link href="mailto:your.email@example.com" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
-                <MailIcon size={24} />
-              </Link>
-            </Tooltip>
+          <Box mt={3} display="flex" flexDirection="column" alignItems="center">
+            <Heading as="h1" sx={{ fontSize: 4, textAlign: 'center' }}>Adrian Llopart</Heading>
+            <Box mt={3} display="flex" sx={{ gap: 3 }} alignItems="center" justifyContent="center">
+              <Tooltip aria-label="GitHub">
+                <Link href="https://github.com/AdrianLlopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                  <MarkGithubIcon size={24} />
+                </Link>
+              </Tooltip>
+              <Tooltip aria-label="YouTube">
+                <Link href="https://www.youtube.com/@adrianllopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                  <YoutubeIcon size={28} />
+                </Link>
+              </Tooltip>
+              <Tooltip aria-label="LinkedIn">
+                <Link href="https://www.linkedin.com/in/adrianllopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                  <Linkedin size={24} />
+                </Link>
+              </Tooltip>
+              <Tooltip aria-label="Email">
+                <Link href="mailto:adrianllopart@gmail.com" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                  <MailIcon size={24} />
+                </Link>
+              </Tooltip>
+            </Box>
           </Box>
         </Box>
 
