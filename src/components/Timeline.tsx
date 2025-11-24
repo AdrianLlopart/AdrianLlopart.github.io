@@ -171,17 +171,9 @@ const TimelineItemContent = ({ item, type, navigate }: { item: Experience | Educ
           <Text display="block" fontWeight="bold" fontSize={1} color="fg.muted">
             {'role' in item ? item.role : item.degree}
           </Text>
-          <Text display="block"  fontSize={1}>
+          <Text display="block" mt={2} fontSize={1}>
             {item.description}
           </Text>
-
-          {item.longDescription && (
-            <Box mt={2}>
-              <Text as="div" fontSize={1} color="fg.muted" sx={{ whiteSpace: 'pre-wrap' }}>
-                {item.longDescription}
-              </Text>
-            </Box>
-          )}
 
           <Box mt={2} display="flex" flexWrap="wrap" sx={{ gap: 1 }}>
             {item.tags.map(tag => (
