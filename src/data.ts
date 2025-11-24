@@ -225,7 +225,7 @@ export const work: Experience[] = [
         endDate: "Present",
         description: "Vision AI models for gastrointestinal lesions in Video Capsule Endoscopy",
         longDescription: "Leading an early stage startup to develop vision AI models that analyses video-capsule endoscopy footage to detect gastrointestinal anomalies rapidly and with high accuracy. Its platform reduces review time from roughly two hours to about fifteen minutes while significantly lowering missed-lesion rates and associated diagnostic delays. The company’s spatio-temporal AI model provides hospitals and clinics with faster, safer, and more efficient small-bowel diagnostics. Raised 300k€ in pre-seed funding to date.",
-        tags: ["AI", "AWS", "CNN", "CV", "Leadership", "ML", "MedTech", "Transformer"],
+        tags: ["AI", "AWS", "CNN", "CV", "Leadership", "MedTech", "ML", "MLOps", "Transformer"],
         location: "Copenhagen, Denmark",
         websiteUrl: "https://mederiai.com",
         logoUrl: "logos/MederiAI.png",
@@ -240,7 +240,7 @@ export const work: Experience[] = [
         description: "Leading AI initiatives for multimodal systems in video cameras.",
         longDescription: "TODO",
         relatedProjectIds: ["ast-doa"],
-        tags: ["AI", "Azure", "CNN", "Edge", "Gstreamer", "Leadership", "ML", "Multimodal", "Python", "Segmentation", "Transformer"],
+        tags: ["AI", "Azure", "CNN", "Edge", "Gstreamer", "Leadership", "ML", "MLOps", "Multimodal", "Python", "Segmentation", "Transformer"],
         location: "Copenhagen, Denmark",
         logoUrl: "logos/Jabra.webp"
     },
@@ -252,7 +252,7 @@ export const work: Experience[] = [
         endDate: "2024",
         description: "Video-based sports analytics using deep learning",
         longDescription: "Development of production-ready deep learning models to be run on cloud and edge devices. This includes data collection, annotation and processing; model definition, training, optimization, profiling, testing and developing the infrastructure for inference using AWS and Gstreamer. Some of the projects I spearheaded were: Action recognition and localization, 2D/3D Player and ball detection and tracking, from monocular images and Advanced match analytics using AI",
-        tags: ["AI", "AWS", "CNN", "Edge", "Gstreamer", "Leadership", "ML", "Multimodal", "Pose Estimation", "Python", "SportTech", "Transformer"],
+        tags: ["AI", "AWS", "CNN", "Edge", "Gstreamer", "Leadership", "ML", "MLOps", "Multimodal", "Pose Estimation", "Python", "SportTech", "Transformer"],
         location: "Copenhagen, Denmark",
         logoUrl: "logos/VEO.png"
     },
