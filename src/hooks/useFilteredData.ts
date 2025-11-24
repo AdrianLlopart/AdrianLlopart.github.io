@@ -20,7 +20,7 @@ export function useFilteredData<T extends ItemWithTags>(data: T[]) {
   const allTags = useMemo(() => {
     const tags = new Set<string>();
     data.forEach(item => item.tags.forEach(t => tags.add(t)));
-    return Array.from(tags).sort();
+    return Array.from(tags).sort((a, b) => a.localeCompare(b));
   }, [data]);
 
   const filteredData = useMemo(() => {
