@@ -171,7 +171,7 @@ const TimelineItemContent = ({ item, type, navigate }: { item: Experience | Educ
           <Text display="block" fontWeight="bold" fontSize={1} color="fg.muted">
             {'role' in item ? item.role : item.degree}
           </Text>
-          <Text display="block" mt={2} fontSize={1}>
+          <Text display="block" mt={2} fontSize={1} sx={{ textAlign: 'justify' }}>
             {item.description}
           </Text>
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Box, Heading, Text, Label, TextInput } from '@primer/react';
 import { SearchIcon, RepoIcon, BookIcon, VideoIcon } from '@primer/octicons-react';
+import ReactMarkdown from 'react-markdown';
 import { projects } from '../data';
 import MediaDisplay from '../components/MediaDisplay';
 import { useFilteredData } from '../hooks/useFilteredData';
@@ -82,9 +83,9 @@ const Projects: React.FC = () => {
                 </Box>
                 <Text fontSize={1} color="fg.muted">{project.date}</Text>
               </Box>
-              <Text as="p" mt={2} color="fg.default">
-                {project.description}
-              </Text>
+              <Box mt={2} color="fg.default" sx={{ '& p': { marginTop: 0, marginBottom: 2, textAlign: 'justify' } }}>
+                <ReactMarkdown>{project.description}</ReactMarkdown>
+              </Box>
               
               <MediaDisplay {...project} />
 

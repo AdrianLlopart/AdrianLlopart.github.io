@@ -19,8 +19,8 @@ const Layout: React.FC<LayoutProps> = ({ colorMode, onToggleTheme }) => {
             <img
               src="/logos/name_logo_white.png"
               alt="Adrian Llopart"
-              height="196px"
-              style={{ display: 'block', transform: 'translateY(6px)' }}
+              height="64px"
+              style={{ display: 'block' }}
             />
           </Link>
         </Header.Item>

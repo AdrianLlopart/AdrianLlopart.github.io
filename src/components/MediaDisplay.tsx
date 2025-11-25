@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Button, Dialog } from '@primer/react';
-import { GlobeIcon, ScreenFullIcon } from '@primer/octicons-react';
+import { GlobeIcon, ScreenFullIcon, BookIcon } from '@primer/octicons-react';
 import { MediaLinks } from '../data';
+import { GithubIcon } from 'lucide-react';
 
-const MediaDisplay: React.FC<MediaLinks> = ({ videoUrls, websiteUrl, pdfUrl, slidesUrl }) => {
+const MediaDisplay: React.FC<MediaLinks> = ({ videoUrls, websiteUrl, pdfUrl, slidesUrl, codeUrl }) => {
   const [fullScreenMedia, setFullScreenMedia] = useState<{ type: 'video' | 'pdf' | 'slides', url: string } | null>(null);
 
   if ((!videoUrls || videoUrls.length === 0) && !websiteUrl && !pdfUrl && !slidesUrl) return null;
@@ -28,14 +29,36 @@ const MediaDisplay: React.FC<MediaLinks> = ({ videoUrls, websiteUrl, pdfUrl, sli
   const processedPdfUrl = pdfUrl ? formatPdfUrl(pdfUrl) : undefined;
   const processedSlidesUrl = slidesUrl ? formatPdfUrl(slidesUrl) : undefined;
 
-  return (
-    <Box display="flex" sx={{ gap: 2 }} my={2} flexWrap="wrap">
-      {websiteUrl && (
-        <Button as="a" href={websiteUrl} target="_blank" size="small" leadingVisual={GlobeIcon}>
-          Website
-        </Button>
-      )}
+  const isHttp = (url: string) => url.startsWith('http://') || url.startsWith('https://');
 
+  return (
+    <Box display="flex" flexDirection="column" sx={{ gap: 2 }} my={2}>
+      {/* Links Row */}
+      <Box display="flex" sx={{ gap: 2 }} flexWrap="wrap">
+        {codeUrl && isHttp(codeUrl) && (
+          <Button as="a" href={codeUrl} target="_blank" size="small" leadingVisual={GithubIcon}>
+            Code
+          </Button>
+        )}
+        {websiteUrl && isHttp(websiteUrl) && (
+          <Button as="a" href={websiteUrl} target="_blank" size="small" leadingVisual={GlobeIcon}>
+            Website
+          </Button>
+        )}
+        {pdfUrl && isHttp(pdfUrl) && (
+           <Button as="a" href={pdfUrl} target="_blank" size="small" leadingVisual={BookIcon}>
+            PDF
+          </Button>
+        )}
+        {slidesUrl && isHttp(slidesUrl) && (
+           <Button as="a" href={slidesUrl} target="_blank" size="small" leadingVisual={ScreenFullIcon}>
+            Slides
+          </Button>
+        )}
+      </Box>
+
+      {/* Media Previews Row */}
+      <Box display="flex" sx={{ gap: 2 }} flexWrap="wrap">
       {processedPdfUrl && (
         <Box 
           display="flex" 
@@ -254,6 +277,7 @@ const MediaDisplay: React.FC<MediaLinks> = ({ videoUrls, websiteUrl, pdfUrl, sli
           </Box>
         </Dialog>
       )}
+    </Box>
     </Box>
   );
 };

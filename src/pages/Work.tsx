@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Heading, Text, Label, TextInput, Avatar } from '@primer/react';
 import { SearchIcon, OrganizationIcon } from '@primer/octicons-react';
+import ReactMarkdown from 'react-markdown';
 import { work, projects, research } from '../data';
 import MediaDisplay from '../components/MediaDisplay';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -103,9 +104,9 @@ const Work: React.FC = () => {
               )}
 
               <Box ml={[0, '64px']}>
-                <Text as="p" mt={3} fontSize={2}>
-                  {job.longDescription || job.description}
-                </Text>
+                <Box mt={3} fontSize={2} sx={{ '& p': { marginTop: 0, marginBottom: 2, textAlign: 'justify' } }}>
+                  <ReactMarkdown>{job.longDescription || job.description}</ReactMarkdown>
+                </Box>
 
                 <MediaDisplay {...job} />
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Heading, Text, Label, TextInput, Avatar } from '@primer/react';
 import { SearchIcon, MortarBoardIcon } from '@primer/octicons-react';
+import ReactMarkdown from 'react-markdown';
 import { education, projects, research } from '../data';
 import MediaDisplay from '../components/MediaDisplay';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -97,9 +98,9 @@ const Education: React.FC = () => {
               </Box>
               
               <Box ml={[0, '64px']}>
-                <Text as="p" mt={3} fontSize={2}>
-                  {edu.longDescription || edu.description}
-                </Text>
+                <Box mt={3} fontSize={2} sx={{ '& p': { marginTop: 0, marginBottom: 2 } }}>
+                  <ReactMarkdown>{edu.longDescription || edu.description}</ReactMarkdown>
+                </Box>
 
                 <MediaDisplay {...edu} />
 
