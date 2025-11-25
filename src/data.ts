@@ -3,6 +3,7 @@ export interface MediaLinks {
     websiteUrl?: string;
     pdfUrl?: string;
     slidesUrl?: string;
+    codeUrl?: string;
 }
 
 export interface BaseItem extends MediaLinks {
@@ -54,39 +55,54 @@ export interface Research extends BaseItem {
 }
 
 export const projects: Project[] = [
-    // {
-    //     id: "deep-researcher",
-    //     title: "Deep Researcher Agent",
-    //     description: "An autonomous agent capable of conducting deep research on given topics, summarizing findings, and generating reports.",
-    //     date: "2025-10-15",
-    //     tags: ["AI", "Agents", "NLP", "Python"],
-    //     type: "project",
-    //     websiteUrl: "https://github.com/AdrianLlopart/deep-researcher"
-    // },
-    // {
-    //     id: "voice-pipeline",
-    //     title: "Voice to Text & Text to Voice Pipeline",
-    //     description: "A robust pipeline for converting voice to text and vice versa, optimized for low latency and high accuracy.",
-    //     date: "2025-09-01",
-    //     tags: ["Audio", "Python", "Speech Processing"],
-    //     type: "project"
-    // },
-    // {
-    //     id: "kino-platform",
-    //     title: "Kino Management Platform",
-    //     description: "Full-stack application for managing film production workflows, featuring real-time collaboration.",
-    //     date: "2025-01-10",
-    //     tags: ["Firebase", "Full Stack", "React", "Web Dev"],
-    //     type: "project"
-    // },
+    {
+        id: "kinokraft",
+        title: "KinokraftAI - AI Agents for Gen AI Media Creation",
+        description:
+            `KinoKraftAI is a comprehensive web application designed for AI-driven media creation and manipulation, offering tools for processing images, video, and audio through a conversational interface. The platform leverages Large Language Models (LLMs) to facilitate user interactions, allowing for complex media editing tasks and project management within a unified workspace. It features a robust architecture that integrates secure user authentication via Firebase and subscription management through Stripe. The system is built for scalability using containerization and infrastructure-as-code principles to ensure reliable deployment and performance.
+
+**Tech Stack**
+- Frontend:
+1. Framework: React
+2. Language: TypeScript
+3. Build Tool: Vite
+4. Styling: Tailwind CSS, PostCSS
+5. State/Services: Firebase SDK, Stripe.js
+
+- Backend:
+1. Language: Python
+2. Framework: FastAPI
+3. AI/ML: LLM Integration, Custom AI Media Tools (Audio, Image, Video)
+4. Database/Storage: Firebase Admin SDK, SQL
+5. Infrastructure & DevOps: Docker, Terraform, GitHub Actions`,
+        date: "2025",
+        tags: ["Agents", "Docker", "FastAPI", "Firebase", "GenAI", "LLMs", "Render", "Scaleway", "Stripe", "Tailwind", "Terraform", "TypeScript"],
+        codeUrl: "https://github.com/KinoKraft",
+        videoUrls: ["videos/kinokraft_demo.mp4"]
+    },
     {
         id: "ast-doa",
         title: "Active Speaker Detection and Direction of Arrival",
         description: "Demo of the integration of multiple AI models (YoloV11, OSNet, BoxMot, LR-ASD, DOA) in a real-time Gstreamer processing pipeline.",
         date: "2025",
-        tags: ["AI", "Audio", "CNN", "DOA", "Gstreamer", "Multimodal", "ML", "Python"],
+        tags: ["AI", "Audio", "CNN", "DOA", "Docker", "Gstreamer", "Multimodal", "ML", "Python"],
         pdfUrl: "images/ast-doa.pdf",
         videoUrls: ["https://youtu.be/xF5U0_ZPrLA"]
+    },
+    {
+        id: "webshop",
+        title: "Webshop for Accoustic Frames",
+        description: `Full-stack e-commerce platform dedicated to the sale and customization of acoustic frames and whiteboards. The application features a React-based frontend that includes a product customizer, shopping cart, and user account management. It is powered by a Node.js and Express backend that handles API requests, authentication, and data management for products and orders. The project is designed to offer a seamless user experience for customers looking to tailor specific acoustic solutions to their needs.
+
+**Tech Stack**
+- Frontend: React, TypeScript, React Router
+- Backend: Node.js, TypeScript
+- Database: MongoDB
+- Utilities: Nodemailer, Google Maps API`,
+        date: "2025",
+        tags: ["e-commerce", "MongoDB", "Node.js", "React", "TypeScript"],
+        codeUrl: "https://github.com/AdrianLlopart/prebenlunde-webshop",
+        slidesUrl: "images/webshop.png"
     },
     {
         id: "table-cleaner",
@@ -94,7 +110,7 @@ export const projects: Project[] = [
         description: "System that recognizes cutlery and dishes from a kinects video stream using CNNs (YOLO framewrok). It the generates the objects pointcloud and obtains suitable grasping positions. Finally it uses a UR10 robot arm to plan and move to the desired grasping locations.",
         date: "2016",
         tags: ["AI", "CNN", "C++", "Grasping", "ML", "PCL", "Robotics", "ROS"],
-        websiteUrl: "https://github.com/Allopart/table_cleaner_ur10",
+        codeUrl: "https://github.com/Allopart/table_cleaner_ur10",
     },
     {
         id: "rbpf",
@@ -102,13 +118,13 @@ export const projects: Project[] = [
         description: "MATLAB implementation of Rao-Blackwellized Particle Filter SLAM, covering map creation, motion modelling, and the full RBPF-SLAM pipeline including scan-matching, particle weighting, and resampling. It describes how simulated odometry and laser data are generated, how particle poses and occupancy grids are updated, and how improved proposal distributions allow accurate SLAM with very few particles.",
         date: "2016",
         tags: ["AI", "ML", "Matlab", "Robotics", "SLAM"],
-        websiteUrl: "https://github.com/Allopart/rbpf-gmapping",
+        codeUrl: "https://github.com/Allopart/rbpf-gmapping",
         pdfUrl: "papers/rbpf.pdf",
         slidesUrl: "presentations/rbpf_users_guide.pdf"
     }
 
-    
-   
+
+
 ];
 
 export const research: Research[] = [
@@ -117,7 +133,7 @@ export const research: Research[] = [
         title: "LiftFormer: 3D Human Pose Estimation using attention models",
         description: "Transformer-based model that leverages temporal attention on sequences of 2D human poses to generate more accurate 3D joint predictions. It achieves state-of-the-art results on multiple benchmarks with fewer parameters than prior methods, outperforming previous best models on Human3.6M and HumanEva-I",
         date: "September 2020",
-        location: "United Kingdom",   
+        location: "United Kingdom",
         tags: ["AI", "ML", "Pose Estimation", "Transformers"],
         publication: "arXiv:2009.00348",
         pdfUrl: "https://arxiv.org/pdf/2009.00348"
@@ -127,23 +143,23 @@ export const research: Research[] = [
         title: "Outlook for navigation-comparing human performance with a robotic solution",
         description: "Comparing human visual lookout with an electronic outlook system by tracking navigator gaze using eye-tracking and benchmarking it against machine-learning-based object detection from electro-optical sensors. It outlines methods for inferring human attention to objects and evaluates the electronic system’s detection and classification performance using statistical quality measures.",
         date: "November 2018",
-        location: "South Korea",   
+        location: "South Korea",
         tags: ["AI", "CNN", "ML", "MaritimeTech", "Segmentation"],
         publication: "Proceedings of the 1st International Conference on Maritime Autonomous Surface Ships (ICMASS)",
         pdfUrl: "papers/maritime.pdf",
         videoUrls: ["https://youtu.be/_vmKbbW1FuM"],
-        websiteUrl: "https://github.com/Allopart/Maritme_Mask_RCNN"
+        codeUrl: "https://github.com/Allopart/Maritme_Mask_RCNN"
     },
     {
         id: "task-intelligence",
         title: "Online Semantic Segmentation and Manipulation of Objects in Task Intelligence for Service Robots",
         description: "A new perceptual pipeline enables robots to detect, segment, and grasp previously unknown objects using CNN-based recognition and 3D point-cloud processing. Integrated with Deep-ART memory, FF-planner, and trajectory warping, the system executes adaptive Task Intelligence behaviors in dynamic environments.",
         date: "November 2018",
-        location: "Singapore",   
+        location: "Singapore",
         tags: ["3D", "AI", "CNN", "Grasping", "Humanoid", "ML", "Planning", "Robotics"],
         publication: "The 15th International Conference on Control, Automation, Robotics and Vision (ICARCV)",
         pdfUrl: "papers/task-intelligence.pdf",
-        videoUrls: ["https://youtu.be/XQtiLE5DmF8"]
+        videoUrls: ["https://youtu.be/XQtiLE5DmF8"],
     },
     {
         id: "semantic-mapping",
@@ -187,7 +203,7 @@ export const research: Research[] = [
         publication: "IEEE 5th International Conference on Robot Intelligence Technology and Applications (RITA)",
         pdfUrl: "papers/3d-model-objects.pdf",
         slidesUrl: "presentations/3d-model-objects.pdf",
-        
+
     },
     {
         id: "perception-ai",
@@ -199,7 +215,7 @@ export const research: Research[] = [
         publication: "IEEE International Conference on Robotics and Biomimetics (ROBIO)",
         pdfUrl: "papers/perception-ai.pdf",
         videoUrls: ["https://youtu.be/cmANQdS_-Zk", "https://youtu.be/HLzFLMktIYc"],
-        websiteUrl: "https://github.com/Allopart/semantic_mapping_and_manipulation"
+        codeUrl: "https://github.com/Allopart/semantic_mapping_and_manipulation"
     },
     {
         id: "door-recognition",
@@ -212,7 +228,7 @@ export const research: Research[] = [
         pdfUrl: "papers/door-recognition.pdf",
         slidesUrl: "presentations/door-recognition.pdf",
         videoUrls: ["https://youtu.be/d9ijieCgzjA"],
-        websiteUrl: "https://github.com/Allopart/door_detection_smr"
+        codeUrl: "https://github.com/Allopart/door_detection_smr"
     },
 ];
 
@@ -225,7 +241,7 @@ export const work: Experience[] = [
         endDate: "Present",
         description: "Vision AI models for gastrointestinal lesions in Video Capsule Endoscopy",
         longDescription: "Leading an early stage startup to develop vision AI models that analyses video-capsule endoscopy footage to detect gastrointestinal anomalies rapidly and with high accuracy. Its platform reduces review time from roughly two hours to about fifteen minutes while significantly lowering missed-lesion rates and associated diagnostic delays. The company’s spatio-temporal AI model provides hospitals and clinics with faster, safer, and more efficient small-bowel diagnostics. Raised 300k€ in pre-seed funding to date.",
-        tags: ["AI", "AWS", "CNN", "CV", "Leadership", "MedTech", "ML", "MLOps", "Transformer"],
+        tags: ["AI", "AWS", "CNN", "CV", "Docker", "Leadership", "MedTech", "ML", "MLOps", "Transformer"],
         location: "Copenhagen, Denmark",
         websiteUrl: "https://mederiai.com",
         logoUrl: "logos/MederiAI.png",
@@ -240,7 +256,7 @@ export const work: Experience[] = [
         description: "Leading AI initiatives for multimodal systems in video cameras.",
         longDescription: "TODO",
         relatedProjectIds: ["ast-doa"],
-        tags: ["AI", "Azure", "CNN", "Edge", "Gstreamer", "Leadership", "ML", "MLOps", "Multimodal", "Python", "Segmentation", "Transformer"],
+        tags: ["AI", "Azure", "CNN", "Docker", "Edge", "Gstreamer", "Leadership", "ML", "MLOps", "Multimodal", "Python", "Segmentation", "Transformer"],
         location: "Copenhagen, Denmark",
         logoUrl: "logos/Jabra.webp"
     },
@@ -251,10 +267,17 @@ export const work: Experience[] = [
         startDate: "2021",
         endDate: "2024",
         description: "Video-based sports analytics using deep learning",
-        longDescription: "Development of production-ready deep learning models to be run on cloud and edge devices. This includes data collection, annotation and processing; model definition, training, optimization, profiling, testing and developing the infrastructure for inference using AWS and Gstreamer. Some of the projects I spearheaded were: Action recognition and localization, 2D/3D Player and ball detection and tracking, from monocular images and Advanced match analytics using AI",
-        tags: ["AI", "AWS", "CNN", "Edge", "Gstreamer", "Leadership", "ML", "MLOps", "Multimodal", "Pose Estimation", "Python", "SportTech", "Transformer"],
+        longDescription: `Development of production-ready deep learning models to be run on cloud and edge devices. This includes data collection, annotation and processing; model definition, training, optimization, profiling, testing and developing the infrastructure for inference using AWS and Gstreamer.
+        
+Some of the projects I spearheaded were:
+        
+- Action recognition and localization
+- 2D/3D Player and ball detection and tracking, from monocular images
+- Advanced match analytics using AI`,
+        tags: ["AI", "AWS", "CNN", "Docker", "Edge", "Gstreamer", "Leadership", "ML", "MLOps", "Multimodal", "Pose Estimation", "Python", "SportTech", "Transformer"],
         location: "Copenhagen, Denmark",
-        logoUrl: "logos/VEO.png"
+        logoUrl: "logos/VEO.png",
+        videoUrls: ["https://www.youtube.com/watch?v=F6o9F01GAqY&list=PLksR6ZWZCOOONcj5X8E-HcgyGoogPDm7H&t=1030s"]
     },
     {
         id: "huawei",
@@ -262,9 +285,9 @@ export const work: Experience[] = [
         role: "Senior AI Developer",
         startDate: "2019",
         endDate: "2021",
-        description: "",
+        description: "Researcher and development of SOTA Deep Learning multimodal models",
         longDescription: "Re-implementation and improvement of state-of-the-art methods for Deep Learning in Computer Vision tasks. These include Object recognition, detection and segmentation (one and two stage),  Human Action recognition and detection, 3D Human Keypoint Estimation, SuperResolution and the supervision of interns",
-        tags: ["AI", "AWS", "CNN", "GAN", "ML", "Multimodal", "Pose Estimation", "Python", "SR", "Segmentation", "Transformer"],
+        tags: ["AI", "AWS", "CNN", "Docker", "GAN", "ML", "Multimodal", "Pose Estimation", "Python", "SR", "Segmentation", "Transformer"],
         relatedPaperIds: ["liftformer"],
         location: "London, United Kingdom",
         logoUrl: "logos/Huawei.jpg"
@@ -284,14 +307,14 @@ export const work: Experience[] = [
 ];
 
 export const education: Education[] = [
-    
+
     {
         id: "kaist-visit",
         institution: "KAIST",
         degree: "Visiting PhD Researcher",
         startDate: "2018",
         endDate: "2019",
-        description: "Object-ENvironment-RObot interaction for Humanoid Service Robots",
+        description: "Embodied AI for Humanoid Service Robots",
         longDescription: "External Research stay focusing on Humanoid Service Robots at the Robot Intelligence and Technology (RIT) Lab under Professor Jong-Hwan Kim supervision. Worked on deep learning techniques for improving 3D perception and object recognition/manipulation for humanoid robots.",
         tags: ["AI", "C++", "CNN", "CV", "Humanoid", "ML", "Manipulation", "PCL", "Pose Estimation", "Python", "ROS", "Robotics", "SLAM", "YOLO"],
         relatedPaperIds: ["perception-ai", "3d-model-objects", "task-intelligence"],
@@ -319,15 +342,7 @@ export const education: Education[] = [
         description: "Teleoperation of miniaturized humanoid robots",
         startDate: "2015",
         endDate: "2015",
-        longDescription: `
-            Exchange abroad to write the Master Thesis for a duration of 4 months.
-            Supervisors:
-            - Takeo Igarashi (Professor, Department of Computer Science, Tokyo University)
-            - Daisuke Sakamoto (Associate professor, Department of Computer Science, Tokyo University)
-            - David Johan Christensen (Associate professor, Department of Electrical Engineering, DTU)
-            10/07/2015 Master Thesis oral presentation in Japan
-            15/08/2015 Thesis submission
-            28/08/2015 Master Thesis oral presentation in Denmark`,
+        longDescription: `Exchange abroad to write the Master Thesis for a duration of 4 months at the Department of Computer Science in Tokyo University under *Professor Takeo Igarashi* and *Associate Professor Daisuke Sakamoto*. The project consisted on developing a **teleoperation system for miniaturized humanoid robots** using VR devices, pose estimation and handheld controllers.`,
         tags: ["Humanoid", "Pose Estimation", "Research", "Robotics", "Teleoperation", "VR"],
         logoUrl: "logos/TU.png",
         location: "Tokyo, Japan"
