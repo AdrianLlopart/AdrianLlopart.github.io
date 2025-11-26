@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Box, Heading, Text, Link, Tooltip } from '@primer/react';
 import { MarkGithubIcon, MailIcon } from '@primer/octicons-react';
-import { Linkedin, YoutubeIcon } from 'lucide-react';
+import { FileIcon, Linkedin, YoutubeIcon } from 'lucide-react';
 import { bio, work, education } from '../data';
 import Timeline from '../components/Timeline';
 
@@ -60,6 +60,11 @@ const Home: React.FC = () => {
               <Tooltip aria-label="Email">
                 <Link href="mailto:adrianllopart@gmail.com" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
                   <MailIcon size={24} />
+                </Link>
+              </Tooltip>
+              <Tooltip aria-label="CV">
+                <Link href="presentations/adrianllopart_CV.pdf" download="adrianllopart_CV.pdf" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                  <FileIcon size={24} />
                 </Link>
               </Tooltip>
             </Box>
