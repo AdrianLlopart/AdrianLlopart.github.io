@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Box, Heading, Text, Link, Tooltip } from '@primer/react';
 import { MarkGithubIcon, MailIcon } from '@primer/octicons-react';
 import { FileIcon, Linkedin, YoutubeIcon } from 'lucide-react';
-import { bio, work, education } from '../data';
+import { bioTitle, bioDescription, work, education } from '../data';
 import Timeline from '../components/Timeline';
 
 const Home: React.FC = () => {
@@ -71,10 +71,13 @@ const Home: React.FC = () => {
           </Box>
         </Box>
 
-        <Box flexGrow={1}>
-          <Box p={3} border="1px solid" borderColor="border.default" borderRadius={2} bg="canvas.subtle">
-            <Text as="p" fontSize={2} lineHeight={1.5}>
-              {bio}
+        <Box flexGrow={1} display="flex" flexDirection="column" alignItems="center" justifyContent="center">
+          <Box width={['100%', '100%', '50%']}>
+            <Text as="p" fontWeight="bold" textAlign="center" fontSize={3} mb={2}>
+              {bioTitle}
+            </Text>
+            <Text as="p" fontSize={2} lineHeight={1.5} textAlign="justify">
+              {bioDescription}
             </Text>
           </Box>
         </Box>

@@ -408,4 +408,5 @@ export const education: Education[] = [
     }
 ];
 
-export const bio = "Senior AI Engineer | Founder | PhD | AI & Humanoid Robotics";
+export const bioTitle = "Senior AI Engineer | Founder | PhD AI & Humanoid Robotics";
+export const bioDescription = "Product-oriented AI engineer with a proven track record of developing and implementing cutting-edge deep learning models on-cloud and on-device. Passionate about the intersection between AI and Robotics.";
