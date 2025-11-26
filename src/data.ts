@@ -78,7 +78,7 @@ export const projects: Project[] = [
         date: "2025",
         tags: ["Agents", "Docker", "FastAPI", "Firebase", "GenAI", "LLMs", "Render", "Scaleway", "Stripe", "Tailwind", "Terraform", "TypeScript"],
         codeUrl: "https://github.com/KinoKraft",
-        videoUrls: ["videos/kinokraft_demo.mp4"]
+        videoUrls: ["https://youtu.be/nhm9qr5tBCk"]
     },
     {
         id: "ast-doa",
@@ -137,7 +137,9 @@ export const research: Research[] = [
         location: "United Kingdom",
         tags: ["AI", "ML", "Pose Estimation", "Transformers"],
         publication: "arXiv:2009.00348",
-        pdfUrl: "https://arxiv.org/pdf/2009.00348"
+        pdfUrl: "https://arxiv.org/pdf/2009.00348",
+        slidesUrl: "images/liftformer.pdf",
+        videoUrls: ["https://youtu.be/E-btfdI1-Vo", "videos/liftformer.gif"]
     },
     {
         id: "maritime",
@@ -184,7 +186,8 @@ export const research: Research[] = [
         tags: ["Control", "ROS", "Robotics", "Teleoperation"],
         publication: "The International Conference on Robotics Systems and Automation Engineering (RSAE)",
         pdfUrl: "papers/teleoperated-arm.pdf",
-        slidesUrl: "presentations/teleoperated-arm.pdf"
+        slidesUrl: "presentations/teleoperated-arm.pdf",
+        videoUrls: ["https://youtu.be/0Cp24JozXJs"]
     },
     {
         id: "bayes",
@@ -280,7 +283,7 @@ Some of the projects I spearheaded were:
         tags: ["AI", "AWS", "CNN", "Docker", "Edge", "Gstreamer", "Leadership", "ML", "MLOps", "Multimodal", "Pose Estimation", "Python", "SportTech", "Transformer"],
         location: "Copenhagen, Denmark",
         logoUrl: "logos/VEO.png",
-        videoUrls: ["https://www.youtube.com/watch?v=F6o9F01GAqY&list=PLksR6ZWZCOOONcj5X8E-HcgyGoogPDm7H&t=1030s"]
+        videoUrls: ["https://www.youtube.com/watch?v=F6o9F01GAqY&list=PLksR6ZWZCOOONcj5X8E-HcgyGoogPDm7H&t=1030s", "https://youtu.be/mDfiiC6TX10"]
     },
     {
         id: "huawei",
@@ -305,7 +308,8 @@ Some of the projects I spearheaded were:
         longDescription: "Developing algorithms and systems for the automation of combine harvesters. Included topics like sensor fusion, UAV vision, image processing and control theory",
         tags: ["CV", "Research", "Robotics", "Sensor fusion", "UAV"],
         location: "Lyngby, Denmark",
-        logoUrl: "logos/DTU.png"
+        logoUrl: "logos/DTU.png",
+        videoUrls: ["https://youtu.be/bilzTWrnptE"]
     }
 ];
 
@@ -349,6 +353,7 @@ export const education: Education[] = [
         tags: ["Humanoid", "Pose Estimation", "Research", "Robotics", "Teleoperation", "VR"],
         logoUrl: "logos/TU.png",
         pdfUrl: "papers/master-thesis.pdf",
+        videoUrls: ["https://youtu.be/5h7p2hD8LWM"],
         location: "Tokyo, Japan"
     },
     {
