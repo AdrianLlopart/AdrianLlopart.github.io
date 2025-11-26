@@ -29,7 +29,7 @@ const Home: React.FC = () => {
             }}
           >
             <video
-              src="/videos/profile_pic_moving.mp4"
+              src="videos/profile_pic_moving.mp4"
               width="100%"
               height="100%"
               autoPlay

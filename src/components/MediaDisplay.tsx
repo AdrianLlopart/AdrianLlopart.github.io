@@ -11,7 +11,7 @@ const MediaDisplay: React.FC<MediaLinks> = ({ videoUrls, websiteUrl, pdfUrl, sli
 
   const formatPdfUrl = (url: string) => {
     if (url.startsWith('public/')) {
-      return url.replace('public/', '/');
+      return url.replace('public/', '');
     }
     return url;
   };

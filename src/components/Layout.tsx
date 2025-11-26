@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ colorMode, onToggleTheme }) => {
         <Header.Item>
           <Link to="/" style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             <img
-              src="/logos/name_logo_white.png"
+              src="logos/name_logo_white.png"
               alt="Adrian Llopart"
               height="64px"
               style={{ display: 'block' }}

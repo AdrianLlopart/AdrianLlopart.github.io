@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://AdrianLlopart.github.io",
+  "homepage": "https://AdrianLlopart.github.io/personal_portfolio",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
