@@ -44,27 +44,27 @@ const Home: React.FC = () => {
             <Heading as="h1" sx={{ fontSize: 4, textAlign: 'center' }}>Adrian Llopart</Heading>
             <Box mt={3} display="flex" sx={{ gap: 3 }} alignItems="center" justifyContent="center">
               <Tooltip aria-label="GitHub">
-                <Link href="https://github.com/AdrianLlopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                <Link href="https://github.com/AdrianLlopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.highlight' } }}>
                   <MarkGithubIcon size={24} />
                 </Link>
               </Tooltip>
               <Tooltip aria-label="YouTube">
-                <Link href="https://www.youtube.com/@adrianllopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                <Link href="https://www.youtube.com/@adrianllopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: '#FF0000' } }}>
                   <YoutubeIcon size={28} />
                 </Link>
               </Tooltip>
               <Tooltip aria-label="LinkedIn">
-                <Link href="https://www.linkedin.com/in/adrian-llopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                <Link href="https://www.linkedin.com/in/adrian-llopart" target="_blank" sx={{ color: 'fg.muted', '&:hover': { color: '#0077B5' } }}>
                   <Linkedin size={24} />
                 </Link>
               </Tooltip>
               <Tooltip aria-label="Email">
-                <Link href="mailto:adrianllopart@gmail.com" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                <Link href="mailto:adrianllopart@gmail.com" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.highlight' } }}>
                   <MailIcon size={24} />
                 </Link>
               </Tooltip>
               <Tooltip aria-label="CV">
-                <Link href="presentations/adrianllopart_CV.pdf" download="adrianllopart_CV.pdf" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.fg' } }}>
+                <Link href="presentations/adrianllopart_CV.pdf" download="adrianllopart_CV.pdf" sx={{ color: 'fg.muted', '&:hover': { color: 'accent.highlight' } }}>
                   <FileIcon size={24} />
                 </Link>
               </Tooltip>

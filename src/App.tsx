@@ -19,6 +19,7 @@ const customTheme = deepmerge(primerTheme, {
           emphasis: '#228B22',
           muted: 'rgba(34, 139, 34, 0.4)',
           subtle: 'rgba(34, 139, 34, 0.1)',
+          highlight: 'black'
         },
       },
     },
@@ -29,6 +30,7 @@ const customTheme = deepmerge(primerTheme, {
           emphasis: '#228B22',
           muted: 'rgba(34, 139, 34, 0.4)',
           subtle: 'rgba(34, 139, 34, 0.15)',
+          highlight: 'white'
         },
       },
     },
