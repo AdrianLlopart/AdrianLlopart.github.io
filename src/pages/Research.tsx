@@ -63,9 +63,9 @@ const Research: React.FC = () => {
           />
         </Box>
 
-        <Box display="flex" flexDirection="column" sx={{ gap: 3 }}>
+        <Box display="flex" flexDirection="column" sx={{ gap: 6 }}>
           {filteredResearch.map((item) => (
-            <Box key={item.id} id={item.id} p={3} border="1px solid" borderColor="border.default" borderRadius={2} bg="canvas.default">
+            <Box key={item.id} id={item.id} p={4} border="1px solid" borderColor="border.default" borderRadius={2} bg="canvas.default">
               <Box display="flex" justifyContent="space-between" alignItems="flex-start">
                 <Box display="flex" sx={{ gap: 2 }} alignItems="center">
                    <Text color="fg.muted"><BookIcon /></Text>

@@ -1,5 +1,6 @@
 export interface MediaLinks {
     videoUrls?: string[];
+    imageUrls?: string[];
     websiteUrl?: string;
     pdfUrl?: string;
     slidesUrl?: string;
@@ -80,7 +81,7 @@ export const projects: Project[] = [
         description: "Demo of the integration of multiple AI models (YoloV11, OSNet, BoxMot, LR-ASD, DOA) in a real-time Gstreamer processing pipeline.",
         date: "2025",
         tags: ["AI", "Audio", "CNN", "DOA", "Docker", "Gstreamer", "Multimodal", "ML", "Python"],
-        pdfUrl: "images/ast-doa.pdf",
+        imageUrls: ["images/ast-doa.jpg"],
         videoUrls: ["https://youtu.be/xF5U0_ZPrLA"]
     },
     {
@@ -90,7 +91,7 @@ export const projects: Project[] = [
         date: "2025",
         tags: ["e-commerce", "MongoDB", "Node.js", "React", "TypeScript"],
         codeUrl: "https://github.com/AdrianLlopart/prebenlunde-webshop",
-        slidesUrl: "images/webshop.png"
+        imageUrls: ["images/webshop.png"]
     },
     {
         id: "table-cleaner",
@@ -99,7 +100,7 @@ export const projects: Project[] = [
         date: "2016",
         tags: ["AI", "CNN", "C++", "Grasping", "ML", "PCL", "Robotics", "ROS"],
         codeUrl: "https://github.com/Allopart/table_cleaner_ur10",
-        slidesUrl: "images/table-cleaner.png"
+        imageUrls: ["images/table-cleaner.png"]
     },
     {
         id: "rbpf",

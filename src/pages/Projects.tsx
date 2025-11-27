@@ -63,15 +63,15 @@ const Projects: React.FC = () => {
           />
         </Box>
 
-        <Box display="flex" flexDirection="column" sx={{ gap: 3 }}>
+        <Box display="flex" flexDirection="column" sx={{ gap: 6 }}>
           {filteredProjects.map((project) => (
-            <Box key={project.id} id={project.id} p={3} border="1px solid" borderColor="border.default" borderRadius={2} bg="canvas.default">
-              <Box display="flex" justifyContent="space-between" alignItems="flex-start">
+            <Box key={project.id} id={project.id} p={4} border="1px solid" borderColor="border.default" borderRadius={2} bg="canvas.default" sx={{ maxWidth: '100%' }}>
+              <Box display="flex" justifyContent="space-between" alignItems="flex-start" flexWrap="wrap">
                 <Box display="flex" sx={{ gap: 2 }} alignItems="center">
                    <Text color="fg.muted">
                      {project.pdfUrl ? <BookIcon /> : (project.videoUrls && project.videoUrls.length > 0) ? <VideoIcon /> : <RepoIcon />}
                    </Text>
-                   <Heading as="h3" sx={{ fontSize: 2 }}>
+                   <Heading as="h3" sx={{ fontSize: 3 }}>
                      {project.websiteUrl ? (
                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
                          {project.title}
@@ -81,15 +81,15 @@ const Projects: React.FC = () => {
                      )}
                    </Heading>
                 </Box>
-                <Text fontSize={1} color="fg.muted">{project.date}</Text>
+                <Text fontSize={1} color="fg.muted" mt={[2, 0]}>{project.date}</Text>
               </Box>
-              <Box mt={2} color="fg.default" sx={{ '& p': { marginTop: 0, marginBottom: 2, textAlign: 'justify' } }}>
+              <Box mt={3} fontSize={2} color="fg.default" sx={{ '& p': { marginTop: 0, marginBottom: 2, textAlign: 'justify' } }}>
                 <ReactMarkdown>{project.description}</ReactMarkdown>
               </Box>
               
               <MediaDisplay {...project} />
 
-              <Box mt={2} display="flex" sx={{ gap: 1 }}>
+              <Box mt={3} display="flex" flexWrap="wrap" sx={{ gap: 1 }}>
                 {project.tags.map(tag => (
                   <Label key={tag} variant="secondary">{tag}</Label>
                 ))}
