@@ -94,7 +94,9 @@ const Education: React.FC = () => {
                     <Text fontWeight="bold" fontSize={2} color="fg.muted">{edu.degree}</Text>
                   </Box>
                 </Box>
-                <Text fontSize={1} color="fg.muted" mt={[2, 0]}>{edu.startDate} - {edu.endDate}</Text>
+                <Text fontSize={1} color="fg.muted" mt={[2, 0]}>
+                  {edu.startDate ? `${edu.startDate} - ${edu.endDate || 'Present'}` : edu.endDate}
+                </Text>
               </Box>
               
               {edu.location && (

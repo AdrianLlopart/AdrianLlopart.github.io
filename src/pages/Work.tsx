@@ -94,7 +94,9 @@ const Work: React.FC = () => {
                     <Text fontWeight="bold" fontSize={2} color="fg.muted">{job.role}</Text>
                   </Box>
                 </Box>
-                <Text fontSize={1} color="fg.muted" mt={[2, 0]}>{job.startDate} - {job.endDate}</Text>
+                <Text fontSize={1} color="fg.muted" mt={[2, 0]}>
+                  {job.startDate ? `${job.startDate} - ${job.endDate || 'Present'}` : job.endDate}
+                </Text>
               </Box>
               
               {job.location && (

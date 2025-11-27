@@ -23,8 +23,8 @@ export interface Experience extends MediaLinks {
     id: string;
     company: string;
     role: string;
-    startDate: string;
-    endDate: string; // "Present" or date
+    startDate?: string;
+    endDate: string;
     description: string;
     tags: string[];
     location: string;
@@ -38,7 +38,7 @@ export interface Education extends MediaLinks {
     id: string;
     institution: string;
     degree: string;
-    startDate: string;
+    startDate?: string;
     endDate: string;
     description: string;
     location: string;
@@ -298,7 +298,6 @@ Some of the projects I spearheaded were:
         id: "dtu-researcher",
         company: "Technical University of Denmark",
         role: "Research Assistant",
-        startDate: "2015",
         endDate: "2015",
         description: "Assitance on PhD project: Automation of Combine Harvester, between DTU and AGCO.",
         longDescription: "Developing algorithms and systems for the automation of combine harvesters. Included topics like sensor fusion, UAV vision, image processing and control theory",
@@ -344,7 +343,6 @@ export const education: Education[] = [
         institution: "Tokyo University",
         degree: "Master Thesis Research Visit",
         description: "Teleoperation of miniaturized humanoid robots",
-        startDate: "2015",
         endDate: "2015",
         longDescription: `Exchange abroad to write the Master Thesis for a duration of 4 months at the Department of Computer Science in Tokyo University under *Professor Takeo Igarashi* and *Associate Professor Daisuke Sakamoto*. The project consisted on developing a **teleoperation system for miniaturized humanoid robots** using VR devices, pose estimation and handheld controllers.`,
         tags: ["Humanoid", "Pose Estimation", "Research", "Robotics", "Teleoperation", "VR"],
@@ -369,7 +367,6 @@ export const education: Education[] = [
         id: "lisbon-exchange",
         institution: "New University of Lisbon",
         degree: "BEST Course",
-        startDate: "2014",
         endDate: "2014",
         description: "Biomedical Signal Processing",
         longDescription: "Learning the basics of biomedical signals and their processing, based on low cost platforms (Arduino).",
@@ -382,7 +379,6 @@ export const education: Education[] = [
         id: "timisora-exchange",
         institution: "Polytechnic University Timisoara",
         degree: "BEST Course",
-        startDate: "2013",
         endDate: "2013",
         description: "Robotics control with C# and .NET ",
         longDescription: "Stay abroad Course to learn the basics of C# and .NET and to create interfaces to control robots. Basic Understanding of threading and decision making in robots.",

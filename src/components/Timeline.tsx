@@ -245,7 +245,13 @@ const TimelineItemContent = ({ item, type, navigate }: { item: Experience | Educ
               {'company' in item ? item.company : item.institution}
             </Heading>
             <Text fontSize={1} color="fg.muted" sx={{ whiteSpace: 'nowrap', flexShrink: 0 }}>
-              {item.startDate} - {item.endDate || 'Present'}
+              {(item.startDate) ? (
+                <>
+                  {item.startDate} - {item.endDate || 'Present'}
+                </>
+              ) : (
+                item.endDate
+              )}
             </Text>
           </Box>
           

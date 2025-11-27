@@ -10,8 +10,8 @@ const Home: React.FC = () => {
   const timelineItems = useMemo(() => {
     const combined = [...work, ...education];
     return combined.sort((a, b) => {
-      const dateA = new Date(a.startDate).getTime();
-      const dateB = new Date(b.startDate).getTime();
+      const dateA = new Date(a.startDate || a.endDate).getTime();
+      const dateB = new Date(b.startDate || b.endDate).getTime();
       return dateB - dateA;
     });
   }, []);
