@@ -57,7 +57,7 @@ function App() {
   return (
     <ThemeProvider theme={customTheme} colorMode={colorMode} preventSSRMismatch>
       <BaseStyles>
-        <Router>
+        <Router future={{ v7_startTransition: true }}>
           <Routes>
             <Route path="/" element={<Layout colorMode={colorMode} onToggleTheme={toggleTheme} />}>
               <Route index element={<Home />} />
