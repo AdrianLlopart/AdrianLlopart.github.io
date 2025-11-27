@@ -251,12 +251,12 @@ export const work: Experience[] = [
     },
     {
         id: "jabra-gn",
-        company: "Jabra (GN Audio)",
+        company: "Jabra GN",
         role: "Senior Machine Learning Engineer",
         startDate: "2024",
         endDate: "Present",
-        description: "Leading AI initiatives for multimodal systems in video cameras.",
-        longDescription: "TODO",
+        description: "Leading multimodal AI initiatives for videobars.",
+        longDescription: "Synthetic multimodal data generation and annotation. Building, training and evaluating multimodal deep learning models and pipelines for videobars for meeting rooms. Also built the MLOPs stack of the team from scratch, including data versioning, model training orchestration, deployment and monitoring.",
         relatedProjectIds: ["ast-doa"],
         tags: ["AI", "Azure", "CNN", "Docker", "Edge", "Gstreamer", "Leadership", "ML", "MLOps", "Multimodal", "Python", "Segmentation", "Transformer"],
         location: "Copenhagen, Denmark",
@@ -269,13 +269,7 @@ export const work: Experience[] = [
         startDate: "2021",
         endDate: "2024",
         description: "Video-based sports analytics using deep learning",
-        longDescription: `Development of production-ready deep learning models to be run on cloud and edge devices. This includes data collection, annotation and processing; model definition, training, optimization, profiling, testing and developing the infrastructure for inference using AWS and Gstreamer.
-        
-Some of the projects I spearheaded were:
-        
-- Action recognition and localization
-- 2D/3D Player and ball detection and tracking, from monocular images
-- Advanced match analytics using AI`,
+        longDescription: `Building, training and deploying of production-ready deep learning models to be run on cloud and edge devices. This includes data collection, annotation and processing; model definition, training, optimization, profiling, testing and developing the infrastructure for inference using AWS and Gstreamer. Dealt with player and ball detection and tracking, event recognition and advanced match analytics using AI.`,
         tags: ["AI", "AWS", "CNN", "Docker", "Edge", "Gstreamer", "Leadership", "ML", "MLOps", "Multimodal", "Pose Estimation", "Python", "SportTech", "Transformer"],
         location: "Copenhagen, Denmark",
         logoUrl: "logos/VEO.png",
@@ -329,7 +323,7 @@ export const education: Education[] = [
         degree: "PhD in Humanoid Robotics and Artificial Intelligence",
         startDate: "2016",
         endDate: "2020",
-        description: "Autonomous Manipulation and 3D Perception for Humanoid Robots.",
+        description: "Perceptive AI and 3D world modelling for Humanoid Robots.",
         longDescription: "Focused on enabling robots to handle kitchen chores and interact with unknown objects. Published research in conferences like RiTA.",
         tags: ["AI", "C++", "CNN", "CV", "Humanoid", "ML", "Manipulation", "PCL", "Pose Estimation", "Python", "ROS", "Robotics", "SLAM", "YOLO"],
         pdfUrl: "papers/phd-thesis.pdf",
