@@ -97,6 +97,12 @@ const Education: React.FC = () => {
                 <Text fontSize={1} color="fg.muted" mt={[2, 0]}>{edu.startDate} - {edu.endDate}</Text>
               </Box>
               
+              {edu.location && (
+                <Box ml={[0, '64px']}>
+                   <Text display="block" fontSize={1} color="fg.muted" mb={2}>{edu.location}</Text>
+                </Box>
+              )}
+
               <Box ml={[0, '64px']}>
                 <Box mt={3} fontSize={2} sx={{ '& p': { marginTop: 0, marginBottom: 2 } }}>
                   <ReactMarkdown>{edu.longDescription || edu.description}</ReactMarkdown>

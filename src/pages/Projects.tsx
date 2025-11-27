@@ -82,7 +82,7 @@ const Projects: React.FC = () => {
                    <Text color="fg.muted">
                      {getProjectIcon(project)}
                    </Text>
-                   <Heading as="h3" sx={{ fontSize: 3 }}>
+                   <Heading as="h3" sx={{ fontSize: 2 }}>
                      {project.websiteUrl ? (
                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
                          {project.title}
