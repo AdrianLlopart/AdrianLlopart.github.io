@@ -77,7 +77,7 @@ const Timeline: React.FC<TimelineProps> = ({ items, type }) => {
           top: 0,
           bottom: 0,
           width: '2px',
-          backgroundColor: '#228B22', // Primer accent color
+          backgroundColor: 'accent.fg',
           transformOrigin: 'top',
           scaleY,
           translateX: '-50%',
@@ -101,7 +101,8 @@ const Timeline: React.FC<TimelineProps> = ({ items, type }) => {
               borderColor: 'accent.fg'
             },
             [`&:has(.timeline-content-${index}:hover) .timeline-connector`]: {
-              bg: 'accent.fg'
+              bg: 'accent.fg',
+              width: '18px'
             }
           }}
         >
@@ -123,12 +124,13 @@ const Timeline: React.FC<TimelineProps> = ({ items, type }) => {
             <Box
               className="timeline-connector"
               position="absolute"
-              right="calc(50% + 8px)"
+              right="calc(50% + 10px)"
               width="24px"
               height="2px"
               bg="border.default"
               sx={{ 
-                transition: 'background-color 0.2s ease'
+                transition: 'background-color 0.2s ease, transform 0.2s ease, width 0.2s ease',
+                transformOrigin: 'right center'
               }}
             />
           )}
@@ -161,7 +163,8 @@ const Timeline: React.FC<TimelineProps> = ({ items, type }) => {
               height="2px"
               bg="border.default"
               sx={{ 
-                transition: 'background-color 0.2s ease'
+                transition: 'background-color 0.2s ease, width 0.2s ease',
+                transformOrigin: 'left center'
               }}
             />
           )}
